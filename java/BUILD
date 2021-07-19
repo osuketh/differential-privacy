@@ -17,3 +17,13 @@ exports_files([
     "dp_java_deps.bzl",
     "dp_java_deps_preload.bzl",
 ])
+
+load("@rules_jvm_external//:defs.bzl", "java_export")
+
+java_export(
+    name = "google-dp",
+    maven_coordinates = "com.google.privacy:differential-privacy:1.0.0",
+    runtime_deps = [
+        "//main/com/google/privacy/differentialprivacy",
+    ],
+)
